@@ -1,0 +1,27 @@
+
+<div class="admin-title">
+  <h2>View / Edit Post</h2>
+
+  <form action="/delete-post/<%= blog._id %>?_method=DELETE" method="POST">
+    <input type="submit" value="Delete" class="btn-delete btn">
+  </form>
+
+</div>
+
+<form action="/edit-post/<%=blog._id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+
+  <label for="title"><b>Title</b></label>
+  <input type="text" placeholder="Post Title" name="title" value="<%= blog.title %>">
+
+  <label for="snippet"><b>Snippet</b></label>
+    <textarea placeholder="Max 30 characters" name="snippet" cols="50" rows="2"></textarea>
+
+  <label for="body"><b>Content</b></label>
+  <textarea name="body" cols="50" rows="10"><%= blog.body %></textarea>
+
+  <label for="image">Product Image</label>
+  <input type="file" name="image" />
+
+  <input type="submit" value="Update" class="btn">
+
+</form>

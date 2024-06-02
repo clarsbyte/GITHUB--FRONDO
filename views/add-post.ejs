@@ -1,0 +1,19 @@
+
+<div class="admin-title">
+    <h2>Add Post</h2>
+  </div>
+  
+  <form action="/add-post" method="POST" enctype="multipart/form-data">
+
+    <label for="title"><b>Title</b></label>
+    <input type="text" placeholder="Post Title" name="title">
+    <label for="snippet"><b>Snippet</b></label>
+    <textarea placeholder="Max 30 characters" name="snippet" cols="50" rows="2"></textarea>
+    <label for="body"><b>Content</b></label>
+    <textarea name="body" cols="50" rows="10"></textarea>
+    <label for="image"> Image</label>
+    <input type="file" name="image" />
+    
+    <input type="submit" value="Add" class="btn">
+  
+  </form>

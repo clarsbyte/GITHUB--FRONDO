@@ -1,0 +1,18 @@
+<h1>Dashboard</h1>
+Remember that the token will expire in two hours!
+<a href="/add-post" class="btn">Add</a>
+<ul class="dashboard-items">
+    <% blog.forEach(element => { %>
+        <div class="one">
+            <h3><%- element.title  %></h3>
+            <p><%- element.snippet  %></p>
+        </div>
+        <a href="/edit-post/<%= element._id %>" class="btn">Edit</a>
+        
+
+        <form action="/delete-post/<%= element._id %>?_method=DELETE" method="POST">
+          <input type="submit" value="Delete" class="btn-delete btn">
+        </form>
+            
+        <% }) %>
+</ul>

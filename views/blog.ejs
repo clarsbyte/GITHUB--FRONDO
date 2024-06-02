@@ -1,0 +1,50 @@
+<div class="searchBar">
+    <div class="container">
+        
+      <form action="/search" method="POST" class="search__form" role="search">
+        <input 
+          type="search"
+          aria-label="Seach"
+          id="searchInput"
+          name="searchTerm"
+          placeholder="Seach for titles.."
+        >
+        
+      </form>
+      
+    </div>
+  </div>
+<div class="blog-grid">
+    <div class="cards show featured ">
+        <img src="/content/blog.png" alt="" id="card" class="featured-image">
+    </div>
+    
+    <div class="cards show featured ">
+        <div class="hero-blog">
+            <p>Featured</p>
+            <h1>Waste in Indonesia</h1>
+            <p class="snipper">
+              According to research led by Jenna Jambeck, Indonesia produces 3.2 million unmanaged waste and around 1.29 million waste ends up in rivers or the sea. 
+            </p>
+            <a href="/blogs/66287293ed57ef585e682d45">Read more</a>
+        </div>
+    </div>
+
+    <% blog.forEach(element => { %>
+    <div class="cards show body ">
+        <a class="card" href="/blogs/<%=element._id%>">
+            <img id="card" src="./content/<%=element.image%>" alt="">
+                <h3><%- element.title  %></h3>
+                
+                <% const limit = (string, length, end = "...") => { %>
+                <%    return string.length < length ? string : string.substring(0, length)  %>
+                <% } %>
+                <p><%- limit(element.snippet, 100)  %></p> 
+                <p>Created at: <%- element.currentDate.toDateString()  %></p>
+        </a>
+    </div>
+        
+    <% }) %>
+
+
+</div>
